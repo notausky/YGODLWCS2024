@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;700&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Public Sans', Arial, sans-serif;
+    background-image: url('https://www.yugioh-card.com/eu/wp-content/uploads/2022/09/WCQ-hero-banner.webp');
+    background-size: cover; /* Ensure the background covers the entire page */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent repeating the background image */
+    background-attachment: fixed; /* Fix background image when scrolling */
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Four columns */
+    grid-template-rows: repeat(2, 1fr); /* Two rows */
+    gap: 20px; /* Space between grid items */
+    padding: 20px; /* Space around the grid */
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 1200px; /* Maximum width of the grid */
+    margin: auto; /* Center grid horizontally */
+    background-color: rgba(0, 0, 0, 0.5); /* Slightly transparent black to stand out against the background image */
+    border-radius: 10px; /* Rounded corners for the container */
+}
+
+.grid-item {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black to ensure good contrast */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Space inside each grid item */
+    text-align: center; /* Center align text */
+    color: #fff; /* White text color */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden; /* Prevent content from overflowing */
+    border: 2px solid #FABC3F; /* Green border color */
+}
+
+.grid-item img {
+    border: 5px solid #FFD700;
+    width: 150px; /* Adjust as needed */
+    height: 150px; /* Adjust as needed */
+    object-fit: cover; /* Cover the area without distortion */
+    border-radius: 50%; /* Make image circular */
+    margin-bottom: 10px; /* Space between image and text */
+}
+
+.player-name {
+    font-size: 1.2em; /* Adjust font size */
+    margin-bottom: 10px; /* Space between name and achievements */
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide any overflow text */
+    text-overflow: ellipsis; /* Add ellipsis for overflowing text */
+}
+
+.achievements-container {
+    background-color: rgba(0, 0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Space between achievements */
+    font-size: 0.9em; /* Adjust font size */
+    width: 100%; /* Ensure it takes up full width of the grid item */
+    text-align: center; /* Center align text */
+}
+
+.achievements {
+    background-color: #333; /* Dark background for achievements */
+    padding: 5px; /* Space inside each achievement box */
+    border-radius: 5px; /* Rounded corners */
+    text-align: center; /* Center align text */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    width: 100%; /* Ensure it takes up full width of the container */
+    border: 2px solid #C0C0C0; /* Silver border */
+}
+
+.grid-item img.diamond-border {
+    border: 5px solid #A1D6B2; /* Emerald green border */
+    border-radius: 50%; /* Make border rounded */
+    box-shadow: 0 0 0 3px #C7253E; /* Royal blue shadow for a diamond-like appearance */
+}
+
+.top-10 {
+    background-color: #EEC61A; /* Gold background for Top 10 achievements */
+    color: #000; /* Black text color for contrast */
+}
+
+.top-100 {
+    background-color: #BDCDD1; /* Silver background for Top 100 achievements */
+    color: #000; /* Black text color for contrast */
+}
+
+.wcs-2023-player {
+    background-color: #0F6DA9; /* Specific color for WCS Player 2023 */
+    color: #fff; /* White text color for contrast */
+}
+
+.wcs-rrq {
+    background-color: #3CB371; /* Close to gold for WCS RRQ achievements */
+    color: #000; /* Black text color for contrast */
+}
+
+.kc-points {
+    background-color: #3CB371; /* Medium Sea Green */
+    color: #fff; /* White text color for contrast */
+    border: 2px solid #C0C0C0; /* Silver border */
+}
+
+.default {
+    background-color: #333; /* Default background color */
+    color: #fff; /* White text color */
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on smaller screens */
+        grid-template-rows: repeat(8, auto); /* Adjust rows accordingly */
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* One column on very small screens */
+        grid-template-rows: repeat(16, auto); /* Adjust rows accordingly */
+    }
+
+    .grid-item img {
+        width: 100px; /* Smaller image size */
+        height: 100px; /* Smaller image size */
+    }
+}
