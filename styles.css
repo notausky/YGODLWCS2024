@@ -6,24 +6,27 @@ html, body {
     height: 100%;
     font-family: 'Public Sans', Arial, sans-serif;
     background-image: url('https://www.yugioh-card.com/eu/wp-content/uploads/2022/09/WCQ-hero-banner.webp');
-    background-size: cover; /* Ensure the background covers the entire page */
-    background-position: center; /* Center the background image */
-    background-repeat: no-repeat; /* Prevent repeating the background image */
-    background-attachment: fixed; /* Fix background image when scrolling */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
 }
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Four columns */
-    grid-template-rows: repeat(2, 1fr); /* Two rows */
-    gap: 20px; /* Space between grid items */
-    padding: 20px; /* Space around the grid */
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
     box-sizing: border-box;
     width: 100%;
-    max-width: 1200px; /* Maximum width of the grid */
-    margin: auto; /* Center grid horizontally */
-    background-color: rgba(0, 0, 0, 0.5); /* Slightly transparent black to stand out against the background image */
-    border-radius: 10px; /* Rounded corners for the container */
+    max-width: 1200px;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    flex: 1; /* Allow grid-container to expand and fill available space */
 }
 
 .grid-item {
@@ -114,21 +117,63 @@ html, body {
     color: #fff; /* White text color */
 }
 
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-bottom: 2px solid #FABC3F;
+}
+
+.header {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    text-align: left;
+    padding: 20px;
+    font-size: 2em;
+    font-weight: 700;
+    border-bottom: 2px solid #FABC3F;
+    position: relative;
+}
+
+.footer {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    border-top: 2px solid #FABC3F;
+    flex-shrink: 0; /* Prevent footer from shrinking */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Space between text and icon */
+}
+
+.footer-icon {
+    width: 48px; /* Adjust size of the icon */
+    height: 48px; /* Adjust size of the icon */
+}
+
+/* Responsive styling */
 @media (max-width: 768px) {
     .grid-container {
-        grid-template-columns: repeat(2, 1fr); /* Two columns on smaller screens */
-        grid-template-rows: repeat(8, auto); /* Adjust rows accordingly */
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(8, auto);
     }
 }
 
 @media (max-width: 480px) {
     .grid-container {
-        grid-template-columns: 1fr; /* One column on very small screens */
-        grid-template-rows: repeat(16, auto); /* Adjust rows accordingly */
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(16, auto);
     }
 
     .grid-item img {
-        width: 100px; /* Smaller image size */
-        height: 100px; /* Smaller image size */
+        width: 100px;
+        height: 100px;
     }
 }
